@@ -17,7 +17,7 @@
 				<nav>
 					<ul>
 						<li><a href="index.html" onclick="testeMeansuringProtocolGA()">Home</a></li>
-						<li><a href="produtos.html" onclick="testeMeansuringProtocolGA2()">Produtos</a></li>
+						<li><a href="produtos.html" onclick="testeMeansuringProtocolGA4()">Produtos</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -87,11 +87,26 @@
 	}
 </script>
 <script>
-	function testeMeansuringProtocolGA2() {
-		var pa = new XMLHttpRequest();
-		pa.onreadystatechange = function() {};
-		pa.open("POST", "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-194083032-1&cid=12345&dp=SegundoClick")
-		pa.send();
+	function testeMeansuringProtocolGA4() {
+
+		const measurement_id = `G-7QPY3DD8CX`;
+		const api_secret = `gGtjzeY_THKI2oyHxkjBGw`;
+
+
+		fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
+  			method: "POST",
+  			body: JSON.stringify({
+    		client_id: '12345.12345',
+    		events: [{
+      		name: 'page_location',
+     		params: {
+				page_location : "TESTE/NL/TESTE",
+				page_title : "TESTANDODISPARO",
+				sdk_analytics_version : "1.0"
+			},
+    }]
+  })
+});
 
 	}
 </script>
