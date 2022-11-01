@@ -74,27 +74,24 @@
 			<p class="copyright">&copy; Copyright Barbearia Alura - 2019</p>
 		</footer>
 	</body>
+</html>
 
 <script>
 
 	function testeMeansuringProtocolGA() {
 		var pa = new XMLHttpRequest();
 		pa.onreadystatechange = function() {};
-		pa.open("POST", "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-194083032-1&cid=12345&dp=test2")
+		pa.open("POST", "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-194083032-1&cid=12345&dp=PrimeiroClick")
 		pa.send();
 
 	}
-
+</script>
+<script>
 	function testeMeansuringProtocolGA2() {
 		var pa = new XMLHttpRequest();
 		pa.onreadystatechange = function() {};
-		pa.open("POST", "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-194083032-1&cid=12345&dp=test2")
+		pa.open("POST", "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-194083032-1&cid=12345&dp=SegundoClick")
 		pa.send();
 
 	}
-
-
 </script>
-
-
-</html>
