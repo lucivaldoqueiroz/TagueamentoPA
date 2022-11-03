@@ -17,7 +17,8 @@
 				<nav>
 					<ul>
 						<li><a href="index.html" onclick="testeMeansuringProtocolGA()">Home</a></li>
-						<li><a href="produtos.html" onclick="testeMeansuringProtocolGA4()">Produtos</a></li>
+						<li><a href="index.html" onclick="testeMeansuringProtocolGA4()">Produtos</a></li>
+						<li><a href="index.html" onclick="testeMeansuringProtocolGA4Firebase()">Contatos</a></li>
 					</ul>
 				</nav>
 			</div>
@@ -97,6 +98,34 @@
   			method: "POST",
   			body: JSON.stringify({
     		client_id: '12345.12345',
+    		events: [{
+      		name: 'page_location',
+     		params: {
+				page_location : "TESTE/NL/TESTE",
+				page_title : "TESTANDODISPARO",
+				sdk_analytics_version : "1.0"
+			},
+    }]
+  })
+});
+
+	}
+</script>
+
+<script>
+	function testeMeansuringProtocolGA4Firebase() {
+
+		const measurement_id = "G-7QPY3DD8CX";
+		const api_secret = "gGtjzeY_THKI2oyHxkjBGw";
+		const firebase_app_id = `1:32806667035:ios:2c3d4c225f8fb26af849be`;
+
+		const app_instance_id = "TESTE01"
+
+
+		fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${firebase_app_id}`, {
+  			method: "POST",
+  			body: JSON.stringify({
+			app_instance_id: app_instance_id,
     		events: [{
       		name: 'page_location',
      		params: {
