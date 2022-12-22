@@ -105,6 +105,9 @@
 				page_title : "TESTANDODISPARO",
 				sdk_analytics_version : "1.0"
 			},
+			user: {
+			    "user_id": "123456"
+		       }
     }]
   })
 });
@@ -121,16 +124,19 @@
 		const app_instance_id = "TESTE01"
 
 
-		fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${firebase_app_id}&api_secret=${api_secret}`, {
+		fetch(`https://www.google-analytics.com/debug/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
   			method: "POST",
   			body: JSON.stringify({
-			app_instance_id: 'app_instance_id',
-    		events: [{
-      		name: 'page_location',
-     		params: {
-				page_location : "TESTE/NL/TESTE",
-				page_title : "TESTANDODISPARO",
-				sdk_analytics_version : "1.0"
+    			events: [{
+       			name:"login",
+			params:{
+			    "custom_path": "TSTLUCI/LG/APLMP/Menu/Submenu/SubmenuDois/Tela 15/12/2022 16/42/13",
+			    "implementation_team": "DAS:DA",
+			    "page_location": "TESTE.COM.BR"
+		       },
+			user: {
+			    "user_id": "123456"
+		       }
 			},
     }]
   })
