@@ -97,7 +97,6 @@
 		fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
   			method: "POST",
   			body: JSON.stringify({
-    		client_id: '12345.12345',
     		events: [{
       		name: 'page_view',
      		params: {
@@ -127,7 +126,7 @@
   			method: "POST",
   			body: JSON.stringify({
 		        "client_id": "123456",
-			"teste_id": "1234567"
+			"teste_id": "1234567",
     			events: [{
        			name:"login",
 			params:{
