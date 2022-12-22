@@ -80,11 +80,26 @@
 <script>
 
 	function testeMeansuringProtocolGA() {
-		var pa = new XMLHttpRequest();
-		pa.onreadystatechange = function() {};
-		pa.open("POST", "https://www.google-analytics.com/collect?v=1&t=pageview&tid=UA-194083032-1&cid=12345&dp=PrimeiroClick")
-		pa.send();
-
+		
+		const measurement_id = "G-7QPY3DD8CX";
+		const api_secret = "gGtjzeY_THKI2oyHxkjBGw";
+		
+		fetch(`https://www.google-analytics.com/debug/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
+  method: "POST",
+  body: JSON.stringify({
+    events: [{
+        name:"login",
+        params:{
+            "custom_path": "TSTLUCI/LG/APLMP/Menu/Submenu/SubmenuDois/Tela",
+            "implementation_team": "DAS:DA",
+            "page_location": "TESTE.COM.BR"
+       },
+        user: {
+            "client_id": "123456"
+       }
+    }]
+  })
+});
 	}
 </script>
 <script>
@@ -97,17 +112,17 @@
 		fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
   			method: "POST",
   			body: JSON.stringify({
-    		events: [{
-      		name: 'page_view',
-     		params: {
-				page_location : "TESTE/NL/TESTE",
-				page_title : "TESTANDODISPARO",
-				sdk_analytics_version : "1.0"
-			},
-			user: {
-			    "client_id": "123456",
-			    "teste_id": "1234567"
-		       }
+    		"client_id": "x",
+		"events": [
+		  {
+		    "name": "offline_purchase",
+		    "params": {
+		      "engagement_time_msec": "100",
+		      "session_id": "123"
+		    }
+		  }
+		]
+		}
     }]
   })
 });
@@ -116,24 +131,24 @@
 </script>
 
 <script>
-	function testeMeansuringProtocolGA4Firebase() {
-		
-		const measurement_id = "G-7QPY3DD8CX";
+	const measurement_id = "G-7QPY3DD8CX";
 		const api_secret = "gGtjzeY_THKI2oyHxkjBGw";
 
 
-		fetch(`https://www.google-analytics.com/debug/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
+		fetch(`https://www.google-analytics.com/mp/collect?measurement_id=${measurement_id}&api_secret=${api_secret}`, {
   			method: "POST",
   			body: JSON.stringify({
-		        "client_id": "123456",
-			"teste_id": "1234567",
-    			events: [{
-       			name:"login",
-			params:{
-			    "custom_path": "TSTLUCI/LG/APLMP/Menu/Submenu/SubmenuDois/Tela 15/12/2022 16/42/13",
-			    "implementation_team": "DAS:DA",
-			    "page_location": "TESTE.COM.BR"
-		       },		    
+    		"client_id": "x",
+		"events": [
+		  {
+		    "name": "offline_purchase",
+		    "params": {
+		      "engagement_time_msec": "100",
+		      "session_id": "123"
+		    }
+		  }
+		]
+		}
     }]
   })
 });
